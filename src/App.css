@@ -1,0 +1,27 @@
+.app-shell {
+	background: #f7f3ed;
+	color: #17212b;
+}
+
+.page-texture {
+	background-image: radial-gradient(#d9d0c3 0.7px, transparent 0.7px);
+	background-size: 18px 18px;
+	opacity: 0.35;
+}
+
+.browser-css {
+	color: #334155;
+	font-size: 1.05rem;
+	line-height: 1.8;
+}
+
+.browser-css p {
+	margin-bottom: 1rem;
+}
+
+.browser-css h2,
+.browser-css h3 {
+	color: #17212b;
+	font-weight: 800;
+	margin: 1.5rem 0 0.75rem;
+}
