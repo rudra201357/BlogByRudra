@@ -1,5 +1,5 @@
 import appwriteCredential from "../config/Config";
-import { Databases, ID, Storage, Query, Client, Permission, Role } from "appwrite";
+import { Databases, ID, Storage, Query, Client} from "appwrite";
 
 export class Services {
     client = new Client();
@@ -31,6 +31,7 @@ export class Services {
             )
         } catch (error) {
             console.log(error)
+            throw error;
         }
     }
     async updatePost(slug, { title, content, featuredImage, status, userId }) {
@@ -49,6 +50,7 @@ export class Services {
             )
         } catch (error) {
             console.log(error)
+            throw error;
         }
     }
     async deletePost(slug) {
@@ -96,7 +98,7 @@ export class Services {
                 appwriteCredential.appWriteBucketId,
                 ID.unique(),
                 file,
-                [Permission.read(Role.any())]
+                // [Permission.read(Role.any())]
             )
         } catch (error) {
             console.log(error)
@@ -120,10 +122,9 @@ export class Services {
     getFilePreview(fileId) {
         if (!fileId) return "";
 
-        return this.bucket.getFilePreview(
-            appwriteCredential.appWriteBucketId,
+        return this.bucket.getFileView(
+           appwriteCredential.appWriteBucketId,
             fileId,
-           
         );
     }
 };

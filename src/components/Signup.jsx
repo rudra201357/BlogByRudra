@@ -25,12 +25,13 @@ function Signup() {
       }
     } catch (error) {
       setError(error.message);
+      
     }
   };
   return (
     <div className="mx-auto grid w-full max-w-5xl overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl shadow-slate-900/5 lg:grid-cols-5">
       <aside className="relative overflow-hidden bg-orange-500 p-8 text-slate-950 sm:p-12 lg:col-span-2">
-        <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full border-[28px] border-orange-300/60" />
+        <div className="absolute -bottom-20 -right-20 h-56 w-56 rounded-full border-28 border-orange-300/60" />
         <div className="relative flex h-full flex-col justify-between gap-16">
           <Logo width="130px" />
           <div>
@@ -46,7 +47,7 @@ function Signup() {
           <h2 className="text-3xl font-bold leading-tight text-slate-950">Create your account</h2>
           <p className="mt-3 text-slate-500">Already have an account? <Link to="/login" className="font-bold text-orange-600 hover:text-orange-700">Sign in</Link></p>
         </div>
-        {error && <p className="mb-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">{error}</p>}
+      
 
         <form onSubmit={handleSubmit(signup)} className="max-w-md">
           <div className="space-y-5">
@@ -82,6 +83,7 @@ function Signup() {
             <Button type="submit" className="w-full">
               Sign up
             </Button>
+              {error && <p className="mb-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">{error}</p>}
           </div>
         </form>
       </div>

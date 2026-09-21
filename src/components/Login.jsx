@@ -33,7 +33,7 @@ function Login() {
       <aside className="relative overflow-hidden bg-slate-950 p-8 text-white sm:p-12 lg:col-span-2">
         <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full border-24 border-orange-500/30" />
         <div className="relative flex h-full flex-col justify-between gap-16">
-          <Logo width="130px" light />
+          <Logo width="130px" classname="text-gray-400" light />
           <div>
             <p className="mb-4 text-xs font-bold uppercase tracking-[0.25em] text-orange-400">Welcome back</p>
             <h1 className="text-4xl font-bold leading-tight sm:text-5xl">Keep the good ideas moving.</h1>
@@ -47,7 +47,7 @@ function Login() {
           <h2 className="text-3xl font-bold leading-tight text-slate-950">Sign in to Rudra.ink</h2>
           <p className="mt-3 text-slate-500">New here? <Link to="/signup" className="font-bold text-orange-600 hover:text-orange-700">Create an account</Link></p>
         </div>
-        {error && <p className="mb-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">{error}</p>}
+        
 
         <form onSubmit={handleSubmit(login)} className="max-w-md">
           <div className="space-y-5">
@@ -75,6 +75,7 @@ function Login() {
             <Button type="submit" className="w-full">
               Sign in
             </Button>
+            {error && <p className="mb-5 rounded-xl bg-red-50 px-4 py-3 text-sm font-medium text-red-700" role="alert">{error}</p>}
           </div>
         </form>
       </div>

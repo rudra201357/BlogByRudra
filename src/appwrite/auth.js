@@ -28,7 +28,8 @@ export class AuthService {
                 return userAccount
             }
         } catch (error) {
-            console.log(error)
+            console.log(error);
+            throw error;
         }
     }
 
@@ -44,6 +45,7 @@ export class AuthService {
             return result
         } catch (error) {
             console.log(error)
+            throw error;
         }
     }
 
@@ -62,7 +64,8 @@ export class AuthService {
         try{
             await this.account.deleteSessions();
         } catch(error){
-            console.log(error)
+            console.log(error);
+            throw error;
         }
     }
 }
