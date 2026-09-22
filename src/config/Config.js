@@ -6,5 +6,4 @@ const appwriteCredential = {
     appWriteBucketId: String(import.meta.env.VITE_APPWRITE_BUCKET_ID),
 
 };
-export const tinymceApiKey = String(import.meta.env.VITE_TINYMCE_API_KEY)
 export default appwriteCredential
