@@ -20,7 +20,8 @@
     "react-hook-form": "^7.87.0",
     "react-redux": "^9.3.0",
     "react-router-dom": "^7.18.3",
-    "tailwindcss": "^4.3.3"
+    "tailwindcss": "^4.3.3",
+    "tinymce": "^8.9.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
