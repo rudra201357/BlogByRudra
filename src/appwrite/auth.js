@@ -68,6 +68,44 @@ export class AuthService {
             throw error;
         }
     }
+    async getUserProfile(){
+        try{
+          const user = await this.account.get();
+           return user;
+        }
+        catch(error){
+            console.log(error);
+            throw error;
+        }
+    }
+    async changeName(updatedName){
+        try{
+            await this.account.updateName(
+                {
+                    name: updatedName
+                }
+            );
+        }
+        catch(error){
+             console.log(error);
+            throw error;
+        }  
+    }
+    async changePassword(oldPassword,currentPassword){
+        try{
+            await this.account.updatePassword(
+                {
+                    password:currentPassword,
+                     oldPassword:oldPassword,
+                }
+            );
+        }
+        catch(error){
+             console.log(error);
+            throw error;
+        }  
+    }
+
 }
 
 

@@ -91,6 +91,21 @@ export class Services {
             return false;
         }
     }
+    async listMyPosts(userId) {
+        try {
+            return await this.databases.listDocuments(
+                appwriteCredential.appWriteDatabaseId,
+                appwriteCredential.appWriteArticlesId,
+                 [
+                    Query.equal('userId', userId), 
+                ]
+            )
+        } catch (error) {
+            console.log(error)
+            throw error;
+           
+        }
+    }
 
     async uploadFile(file) {
         try {
